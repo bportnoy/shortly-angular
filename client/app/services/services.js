@@ -13,7 +13,7 @@ angular.module('shortly.services', [])
   };
 
   linkInstance.addLink = function(urlBox){
-      $http.post('/api/links', {url: urlBox})
+      return $http.post('/api/links', {url: urlBox})
       .success(function(data, status, headers, config){
         console.log('Link posted successfully with code ' + status);
       }).error(function(data, status, headers, config){

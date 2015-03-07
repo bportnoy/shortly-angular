@@ -1,8 +1,10 @@
 <div id='container' ng-controller='ShortenController'>
-<form ng-submit='addLink()'>
-<input type='text' placeholder='Please enter a URL to shorten.' ng-model="link">
-<button>Shortenify!</button><img ng-show='submitting' src='../assets/spiffygif_46x46.gif'>
+<form class ='form' ng-submit='addLink()' ng-model="form" name='shortenForm'>
+<input ng-pattern="/^(?!mailto:)(?:(?:https?|ftp):\/\/)?(?:\S+(?::\S*)?@)?(?:(?:(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[0-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))|localhost)(?::\d{2,5})?(?:\/[^\s]*)?$/i" placeholder='Please enter a URL to shorten.' ng-model='link' name='link'>
+<button ng-disabled='shortenForm.link.$invalid'>Shortenify!</button><img ng-show='submitting' src='../assets/spiffygif_46x46.gif'>
 </form>
 </div>
 
 
+
+<!--  -->

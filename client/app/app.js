@@ -9,27 +9,33 @@ angular.module('shortly', [
   $routeProvider
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
-      controller: 'AuthController'
+      controller: 'AuthController',
+      authenticate: false
     })
     .when('/signup', {
       templateUrl: 'app/auth/signup.html',
-      controller: 'AuthController'
+      controller: 'AuthController',
+      authenticate: false
     })
     .when('/links', {
       templateUrl: 'app/links/links.html',
-      controller: 'LinksController'
+      controller: 'LinksController',
+      authenticate: true
     })
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
-      controller: 'ShortenController'
+      controller: 'ShortenController',
+      authenticate: true
     })
     .when('/', {
       templateUrl: 'app/links/links.html',
-      controller: 'LinksController'
+      controller: 'LinksController',
+      authenticate: true
     })
     .otherwise({
       templateUrl: 'app/links/links.html',
-      controller: 'LinksController'
+      controller: 'LinksController',
+      authenticate: true
       });
     // Your code here ^
 

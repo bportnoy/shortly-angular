@@ -8,7 +8,7 @@ angular.module('shortly.auth', [])
     require: 'ngModel',
     link: function(scope, ele, attrs, c) {
       scope.$watch(attrs.ngModel, function() {
-        console.log(scope.user.username);
+        // console.log(scope.user.username);
         $http({
           method: 'POST',
           url: '/api/users/checkusername',

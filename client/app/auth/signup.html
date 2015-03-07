@@ -1,7 +1,7 @@
 <div id='signup' ng-controller="AuthController">
   <h1>Sign up for Shortly!</h1>
-  <form name="signupForm" ng-submit='signup()'>
-    <input type='text' ng-model='user.username' placeholder='Username'>
+  <form class = 'form' name="signupForm" ng-submit='signup()'>
+    <input type='text' check-username ng-model='user.username' placeholder='Username' name='username'>
     <input type="password" ng-model='user.password' placeholder='Password'>
     <button>Sign up</button>
   </form>

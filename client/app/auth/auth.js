@@ -3,6 +3,26 @@
 // in our signup/signin forms using the injected Auth service
 angular.module('shortly.auth', [])
 
+.directive('checkUsername', ['$http', function($http) {
+  return {
+    require: 'ngModel',
+    link: function(scope, ele, attrs, c) {
+      scope.$watch(attrs.ngModel, function() {
+        console.log(scope.user.username);
+        $http({
+          method: 'POST',
+          url: '/api/users/checkusername',
+          data: {username : scope.user.username}
+        }).success(function(data, status, headers, cfg) {
+          c.$setValidity('unique', true);
+        }).error(function(data, status, headers, cfg) {
+          c.$setValidity('unique', false);
+        });
+      });
+    }
+  };
+}])
+
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
 

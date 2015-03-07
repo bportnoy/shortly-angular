@@ -29,6 +29,17 @@ module.exports = {
       });
   },
 
+  checkUsername: function(req, res, next) {
+    var username = req.body.username;
+    var findOne = Q.nbind(User.findOne, User);
+
+    findOne({username: username})
+    .then(function(user){
+      if (user) res.status(406).send();
+      else res.status(202).send();
+    });
+  },
+
   signup: function (req, res, next) {
     var username  = req.body.username,
         password  = req.body.password,

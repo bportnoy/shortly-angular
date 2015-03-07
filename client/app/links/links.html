@@ -1,3 +1,19 @@
 <div id='container' ng-controller='LinksController'>
-  <!-- Your html here -->
+
+  <div class='link' ng-repeat='n in data.links'>
+  <img src='../assets/redirect_icon.png'>
+  <div class="info">
+    <div class="visits">
+      <span class="count">{{n.visits}}</span>
+      "Visits"
+    </div>
+    <div class="title">
+      {{n.title}}
+    </div>
+    <div class="original">
+      {{n.url}}
+    </div>
+    <a href="http://127.0.0.1:3000/{{n.code}}">http://127.0.0.1:3000/{{n.code}}</a>
+  </div>
+  <div>
 </div>

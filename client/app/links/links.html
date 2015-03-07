@@ -1,11 +1,11 @@
 <div id='container' ng-controller='LinksController'>
 
-  <div class='link' ng-repeat='n in data.links'>
+  <div class='link' ng-repeat='n in data.links | orderBy:n.visits'>
   <img src='../assets/redirect_icon.png'>
   <div class="info">
     <div class="visits">
       <span class="count">{{n.visits}}</span>
-      "Visits"
+      Visits
     </div>
     <div class="title">
       {{n.title}}
@@ -13,7 +13,7 @@
     <div class="original">
       {{n.url}}
     </div>
-    <a href="http://127.0.0.1:3000/{{n.code}}">http://127.0.0.1:3000/{{n.code}}</a>
+    <a href="http://127.0.0.1:3000/api/links/{{n.code}}">http://127.0.0.1:3000/api/links/{{n.code}}</a>
   </div>
   <div>
 </div>

@@ -1,6 +1,6 @@
 <div id='container' ng-controller='LinksController'>
-
-  <div class='link' ng-repeat="n in data.links | orderBy:'-visits'">
+  <input type='text' ng-model='search' placeholder='Search'>
+  <div class='link' ng-repeat="n in data.links | filter:{title: search} | orderBy:'-visits'">
   <img src='../assets/redirect_icon.png'>
   <div class="info">
     <div class="visits">
@@ -15,5 +15,5 @@
     </div>
     <a href="http://127.0.0.1:3000/{{n.code}}">http://127.0.0.1:3000/{{n.code}}</a>
   </div>
-  <div>
+  </div>
 </div>

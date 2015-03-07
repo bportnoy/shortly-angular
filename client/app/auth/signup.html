@@ -3,7 +3,7 @@
   <form class = 'form' name="signupForm" ng-submit='signup()'>
     <input type='text' check-username ng-model='user.username' placeholder='Username' name='username'>
     <input type="password" ng-model='user.password' placeholder='Password'>
-    <button>Sign up</button>
+    <button ng-disabled='signupForm.username.$invalid'>Sign up</button>
   </form>
   <a href="#/signin">Already have an account? <strong>Sign in</strong> ...</a>
 </div>
